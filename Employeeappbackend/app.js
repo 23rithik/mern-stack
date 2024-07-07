@@ -17,6 +17,7 @@ app.use(cors());
 app.use('/api', postRoute);
 app.use('/user', userRoute);
 
+app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'/index.html'));});
 // Error Handling Middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
