@@ -15,7 +15,7 @@ const Addemployee = () => {
 
   const capValue = async () => {
     try {
-      const res = await axiosInstance.post('http://localhost:4000/api/addemployee', form);
+      const res = await axiosInstance.post('https://mern-stack-server-sand.vercel.app/api/addemployee', form);
       alert(res.data.message);
       
     } catch (error) {

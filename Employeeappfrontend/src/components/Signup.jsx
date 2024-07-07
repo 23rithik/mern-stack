@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axiosInstance.post('http://localhost:4000/api/addusers', form);
+      const res = await axiosInstance.post('https://mern-stack-server-sand.vercel.app/api/addusers', form);
       alert(res.data.message);
       // Optionally, redirect user to login page or perform other actions upon successful signup
     } catch (error) {

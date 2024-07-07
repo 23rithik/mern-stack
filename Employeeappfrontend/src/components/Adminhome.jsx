@@ -5,7 +5,7 @@ const Adminhome = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axiosInstance.get('http://localhost:4000/api/employees')
+        axiosInstance.get('https://mern-stack-server-sand.vercel.app/api/employees')
             .then((res) => {
                 console.log(res.data);
                 setData(res.data); // Update state correctly
@@ -26,7 +26,7 @@ const Adminhome = () => {
     };
     const deleteEmployee = async (id) => {
         try {
-            await axiosInstance.delete(`http://localhost:4000/api/employees/${id}`);
+            await axiosInstance.delete(`https://mern-stack-server-sand.vercel.app/api/employees/${id}`);
         } catch (error) {
             throw new Error(error.response.data.error);
         }

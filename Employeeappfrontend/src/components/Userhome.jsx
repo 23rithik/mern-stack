@@ -6,7 +6,7 @@ const Userhome = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axiosInstance.get('http://localhost:4000/api/employees')
+        axiosInstance.get('https://mern-stack-server-sand.vercel.app/api/employees')
             .then((res) => {
                 console.log(res.data);
                 setData(res.data); // Update state correctly

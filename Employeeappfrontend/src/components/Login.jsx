@@ -13,7 +13,7 @@ const Login = () => {
   const capValue = () => {
     // Check if email is admin email
     if (user.email === 'admin@gmail.com') {
-      axios.post('http://localhost:4000/user/login1', user)
+      axios.post('https://mern-stack-server-sand.vercel.app/user/login1', user)
         .then((res) => {
           alert(res.data.message);
           if (res.data.token) {
@@ -26,7 +26,7 @@ const Login = () => {
           alert('Login failed. Please try again.');
         });
     } else {
-      axios.post('http://localhost:4000/user/login', user)
+      axios.post('https://mern-stack-server-sand.vercel.app/user/login', user)
         .then((res) => {
           alert(res.data.message);
           if (res.data.token) {

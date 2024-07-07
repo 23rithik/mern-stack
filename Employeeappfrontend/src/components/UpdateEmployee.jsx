@@ -10,7 +10,7 @@ const UpdateEmployee = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axiosInstance.get('http://localhost:4000/api/employees');
+        const response = await axiosInstance.get('https://mern-stack-server-sand.vercel.app/api/employees');
         setEmployees(response.data);
       } catch (error) {
         console.error('Error fetching employees:', error);
@@ -37,7 +37,7 @@ const UpdateEmployee = () => {
         return;
       }
 
-      const response = await axiosInstance.put(`http://localhost:4000/api/employees/${employeeId}`, employeeToUpdate);
+      const response = await axiosInstance.put(`https://mern-stack-server-sand.vercel.app/api/employees/${employeeId}`, employeeToUpdate);
       console.log('Update response:', response.data); // Handle success scenario
       // Optionally, you can show a success message or redirect
     } catch (error) {
