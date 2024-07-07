@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 require('dotenv').config();
 require('./db/mongodb'); // Ensure this connects to MongoDB correctly
 const cors = require('cors');
@@ -18,14 +17,7 @@ app.use(cors());
 app.use('/api', postRoute);
 app.use('/user', userRoute);
 
-// Serving frontend (assuming it's in '../Employeeappfrontend' directory)
-app.use(express.static(path.join(__dirname, '../Employeeappfrontend')));
-
-// Catch-all route for frontend routing (to serve index.html)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Employeeappfrontend', 'index.html'));
-});
-
+app.get('/*',function(req,res){res.sendFile(path.join(__dirname,'../Employeeappfrontend/index.html'));});
 // Error Handling Middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
