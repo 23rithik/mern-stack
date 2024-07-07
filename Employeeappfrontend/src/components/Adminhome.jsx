@@ -34,7 +34,7 @@ const Adminhome = () => {
 
   return (
     <Box style={{ margin: '5%' }}>
-            <Grid container spacing={2}>
+        <Grid container spacing={2} style={{marginLeft:"9%"}}>
                 {data.map((item) => (
                     <Grid item xs={12} sm={6} md={4} > 
                         <Card sx={{ maxWidth: 345 }}>

@@ -11,6 +11,7 @@ import Adminhome from './components/Adminhome'
 import Main2 from './components/Main2'
 import Addemployee from './components/Addemployee'
 import UpdateEmployee from './components/UpdateEmployee'
+import PrivateRoutes from './components/PrivateRoutes'
 
 function App() {
   
@@ -20,10 +21,12 @@ function App() {
       <Routes>
       <Route path={'/'} element={<Login/>}></Route>
       {/* <Route path={'/Signup'} element={<Signup/>}></Route> */}
+      <Route element={<PrivateRoutes/>}>
       <Route path={'/userhome'} element={<Main child={<Userhome/>}/>}></Route>
       <Route path={'/adminhome'} element={<Main2 child={<Adminhome/>}/>}></Route>
       <Route path={'/addemployee'} element={<Main2 child={<Addemployee/>}/>}></Route>
       <Route path={'/updateemployee'} element={<Main2 child={<UpdateEmployee/>}/>}></Route>
+      </Route>
       </Routes>
     </>
   )
